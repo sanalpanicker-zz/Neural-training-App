@@ -44,7 +44,6 @@ class ImgLoader extends Component {
         }
     }
     render() {
-        console.log(this.props.imgdata);
         this.imageDetail.focusStyle = {
             height: parseInt(this.props.imgdata.Height) / this.imageDetail.rf,
             width: parseInt(this.props.imgdata.Width) / this.imageDetail.rf,

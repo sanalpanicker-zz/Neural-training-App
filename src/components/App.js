@@ -15,10 +15,7 @@ class App extends Component {
     updateData = (result) => {
         const data = result.data;
         this.basedata = data;
-        console.log(data);
-        this.setState({data});
-        this.setState({loaded: true});
-        console.log(data);
+        this.setState({data,loaded: true});
     }
 
     speedSelector = (speed) => {
@@ -41,7 +38,6 @@ class App extends Component {
             header: true,
             download: true,
             skipEmptyLines: true,
-            // step: (row) => {   console.log("Row:", row.data); },
             complete: this.updateData
         });
     }

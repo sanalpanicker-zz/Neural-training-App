@@ -16,8 +16,6 @@ class LabelLister extends Component {
     resizeRowHeight = (rowHeight) => {
         this.setState({rowHeight});
     }
-    // renderImage = (data) => {     return <ImgLoader key={data.Img_Name +
-    // data.Top} imgdata={data}/>; }
 
     renderImage = ({index, key, style, parent}) => {
         const items = [];
@@ -25,7 +23,6 @@ class LabelLister extends Component {
         const toIndex = Math.min(fromIndex + 2, this.props.data.length);
 
         for (let i = fromIndex; i < toIndex; i++) {
-            console.log(this.props.data[i]);
             items.push(<ImgLoader
                 key={this.props.data[i].Img_Name + this.props.data[i].Left}
                 rowheight={this.resizeRowHeight}
@@ -39,11 +36,7 @@ class LabelLister extends Component {
     }
 
     render() {
-        const dataSet = this.props.data;
         return <Fragment>
-            {/* <section>
-            <div id="flex"> */}
-            {/* {dataSet.map(this.renderImage)} */}
             <AutoSizer>
                 {({width, height}) => {
                     return <List
@@ -56,8 +49,6 @@ class LabelLister extends Component {
                         overscanRowCount={4}/>
                 }}
             </AutoSizer>
-            {/* </div>
-            </section> */}
         </Fragment>;
     }
 }
